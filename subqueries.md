@@ -11,12 +11,12 @@ First, you would need to calculate the average revenue all the Associates are ge
 
 ```
 SELECT AVG(revenue_generated)
-FROM slaes_associates
+FROM sales_associates
 ```
  then using that result, we can then compare the costs of each of the Associates against that value. To use it as a subquery, we can just write it straight into the WHERE clause of the query:
 ```
 SELECT *
 FROM sales_associates
 WHERE salary >
-   (SELECT AVG(revenue_generated) FROM slaes_associates);
+   (SELECT AVG(revenue_generated) FROM sales_associates);
 ```
